@@ -7,6 +7,8 @@ import { Button } from "./ui/Button";
 import { DrillIcon, HardHatIcon, RulerIcon, HammerIcon, ExcavatorIcon, CableDrumIcon } from "./icons/ConstructionIcons";
 import { copy } from "../../content/copy";
 
+const VIDEO_URL = "https://eoahpwciwttfavzpqfnz.supabase.co/storage/v1/object/sign/unrelated/office%20portrait.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85YmJlMzI3NC0xODJjLTRmZGUtODk2NC1hMTcxNzVmY2I1NGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ1bnJlbGF0ZWQvb2ZmaWNlIHBvcnRyYWl0LnBuZyIsImlhdCI6MTc2ODc4MDIzNCwiZXhwIjoxOTU3OTk2MjM0fQ.04imUDky-xwnSH6FL_Sz9bae1-9d3rY9gbvj2S8Np2I";
+
 export function AnimatedHero() {
   const { hero } = copy;
   const containerRef = useRef<HTMLDivElement>(null);
@@ -165,33 +167,36 @@ export function AnimatedHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-display text-display-xl text-white mb-6"
+          style={{ wordSpacing: '0.15em' }}
         >
-          <span className="relative">
-            {hero.headline.split(" ").map((word, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                className={
-                  word === "Scheiß"
-                    ? "text-orange-500 relative inline-block"
-                    : "inline-block"
-                }
-              >
-                {word}
-                {word === "Scheiß" && (
-                  <motion.span
-                    className="absolute -bottom-1 left-0 right-0 h-1 bg-orange-500"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 0.4, delay: 1 }}
-                  />
-                )}
-                {index < hero.headline.split(" ").length - 1 && " "}
-              </motion.span>
-            ))}
-          </span>
+          {hero.headline.split("\n").map((line, lineIndex) => (
+            <span key={lineIndex} className="block">
+              {line.split(" ").map((word, wordIndex) => (
+                <motion.span
+                  key={wordIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 + (lineIndex * 3 + wordIndex) * 0.1 }}
+                  className={
+                    word === "verschwindet"
+                      ? "text-orange-500 relative inline"
+                      : "inline"
+                  }
+                >
+                  {word}
+                  {word === "verschwindet" && (
+                    <motion.span
+                      className="absolute -bottom-1 left-0 right-0 h-1 bg-orange-500"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.4, delay: 1 }}
+                    />
+                  )}
+                  {wordIndex < line.split(" ").length - 1 && " "}
+                </motion.span>
+              ))}
+            </span>
+          ))}
         </motion.h1>
 
         {/* Subheadline */}
@@ -258,14 +263,16 @@ export function AnimatedHero() {
             </motion.div>
           </a>
 
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-2 text-concrete-400 hover:text-white transition-colors px-6 py-3"
-          >
-            <Play className="w-5 h-5" />
-            <span>Video ansehen</span>
-          </motion.button>
+          <a href={VIDEO_URL} target="_blank" rel="noopener noreferrer">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="flex items-center gap-2 text-concrete-400 hover:text-white transition-colors px-6 py-3 cursor-pointer"
+            >
+              <Play className="w-5 h-5" />
+              <span>Video ansehen</span>
+            </motion.div>
+          </a>
         </motion.div>
 
         {/* Trust badges */}
