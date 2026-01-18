@@ -1,0 +1,43 @@
+import type { Metadata } from "next";
+import "@/styles/globals.css";
+
+export const metadata: Metadata = {
+  title: "KI im Bau Starter Kit | Für Nachunternehmer",
+  description:
+    "Das komplette Starter Kit für Nachunternehmer: E-Book (300+ Seiten), 50+ Prompts, Tool-Vergleich & Checklisten. Spare 40% deiner Arbeitszeit mit KI.",
+  keywords: [
+    "KI",
+    "Bau",
+    "Nachunternehmer",
+    "Subunternehmer",
+    "Ausschreibung",
+    "Angebot",
+    "E-Book",
+    "ChatGPT",
+    "Baubranche",
+  ],
+  authors: [{ name: "Clarence Johnson" }],
+  openGraph: {
+    title: "KI im Bau Starter Kit | Für Nachunternehmer",
+    description:
+      "Das komplette Starter Kit für Nachunternehmer: E-Book (300+ Seiten), 50+ Prompts, Tool-Vergleich & Checklisten.",
+    type: "website",
+    locale: "de_DE",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="de">
+      <body>
+        {children}
+        {/* Subtle Noise Overlay for Texture */}
+        <div className="noise-overlay" aria-hidden="true" />
+      </body>
+    </html>
+  );
+}
