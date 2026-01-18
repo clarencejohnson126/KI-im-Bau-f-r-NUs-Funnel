@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
-import { Shield, Download, Lock, ArrowRight, Sparkles } from "lucide-react";
+import { Shield, Download, Lock, ArrowRight, Sparkles, Play } from "lucide-react";
 import { Button } from "./ui/Button";
 import { copy } from "../../content/copy";
+
+const VIDEO_URL = "https://eoahpwciwttfavzpqfnz.supabase.co/storage/v1/object/sign/unrelated/office%20portrait.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85YmJlMzI3NC0xODJjLTRmZGUtODk2NC1hMTcxNzVmY2I1NGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ1bnJlbGF0ZWQvb2ZmaWNlIHBvcnRyYWl0LnBuZyIsImlhdCI6MTc2ODc4MDIzNCwiZXhwIjoxOTU3OTk2MjM0fQ.04imUDky-xwnSH6FL_Sz9bae1-9d3rY9gbvj2S8Np2I";
 
 export function Hero() {
   const { hero } = copy;
@@ -52,7 +54,7 @@ export function Hero() {
 
           {/* Main Headline - Bold Display Typography */}
           <h1 className="animate-fade-in-up opacity-0 delay-200">
-            <span className="block font-display text-display-xl text-concrete-900 mb-2">
+            <span className="block font-display text-display-xl text-concrete-900 mb-2" style={{ wordSpacing: '0.15em' }}>
               40% deiner Arbeitszeit
             </span>
             <span className="block font-display text-display-xl">
@@ -63,10 +65,25 @@ export function Hero() {
                 </svg>
               </span>
             </span>
-            <span className="block font-display text-display-xl text-concrete-900">
+            <span className="block font-display text-display-xl text-concrete-900" style={{ wordSpacing: '0.15em' }}>
               im Papierkrieg
             </span>
           </h1>
+
+          {/* Video Link */}
+          <div className="animate-fade-in-up opacity-0 delay-250 mt-6">
+            <a
+              href={VIDEO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 text-concrete-600 hover:text-orange-500 transition-colors group"
+            >
+              <span className="flex items-center justify-center w-12 h-12 rounded-full bg-orange-500 text-white group-hover:bg-orange-600 transition-colors shadow-lg">
+                <Play className="w-5 h-5 ml-1" />
+              </span>
+              <span className="font-medium">Video ansehen</span>
+            </a>
+          </div>
 
           {/* Subheadline */}
           <p className="animate-fade-in-up opacity-0 delay-300 text-body-lg text-concrete-600 mt-8 mb-10 max-w-2xl leading-relaxed">
