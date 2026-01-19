@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Star, ChevronLeft, ChevronRight, Building2, MapPin, CheckCircle, Users } from "lucide-react";
 import { ScrollReveal } from "./ui/ScrollReveal";
@@ -201,11 +200,10 @@ export function TestimonialsAnimated() {
                       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                     />
                     <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-concrete-900">
-                      <Image
+                      <img
                         src={active.avatarUrl}
                         alt={active.author}
-                        fill
-                        className="object-cover"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   </motion.div>
@@ -344,11 +342,10 @@ export function TestimonialsAnimated() {
 
               <div className="relative z-10 flex items-center gap-3 mb-2">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-orange-500/50">
-                  <Image
+                  <img
                     src={t.avatarUrl}
                     alt={t.author}
-                    fill
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="flex-1 min-w-0">
