@@ -1,6 +1,17 @@
 import { Resend } from "resend";
 
-export const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend lazily to avoid build-time errors
+let resendInstance: Resend | null = null;
+
+export function getResend(): Resend {
+  if (!resendInstance) {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY environment variable is not set");
+    }
+    resendInstance = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resendInstance;
+}
 
 export const FROM_EMAIL = "KI im Bau <noreply@thinkbig.rebelz-ai.com>";
 
@@ -147,7 +158,7 @@ Clarence Johnson
 Gründer, Rebelz AI
   `;
 
-  const { data, error } = await resend.emails.send({
+  const { data, error } = await getResend().emails.send({
     from: FROM_EMAIL,
     to,
     subject: "Dein KI im Bau Starter Kit ist bereit zum Download",
