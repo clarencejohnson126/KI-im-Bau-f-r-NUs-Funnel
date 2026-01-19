@@ -108,7 +108,7 @@ function ThankYouContent() {
                 Starter Kit herunterladen (PDF, Prompts, Checklisten)
               </Button>
             </a>
-            <a href="/downloads/KI-im-Bau-Flipbook.zip" download className="block">
+            <a href="https://drive.google.com/uc?export=download&id=1Uag-CD5k-SFLFBfFmgLfHj-F_sjJ3BYO" className="block">
               <Button variant="secondary" size="lg" fullWidth>
                 <Layers className="w-5 h-5 mr-2" />
                 Interaktives Flipbook herunterladen (HTML5)
