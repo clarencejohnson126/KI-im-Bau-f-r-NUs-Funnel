@@ -26,22 +26,22 @@ function ThankYouContent() {
     {
       icon: <BookOpen className="w-5 h-5" />,
       title: "E-Book: KI im Bau für Nachunternehmer",
-      filename: "KI-im-Bau-Starter-Kit-Ebook.pdf",
+      url: "/downloads/KI-im-Bau-Starter-Kit.zip",
     },
     {
       icon: <FileText className="w-5 h-5" />,
       title: "Prompt-Sammlung (50+ Prompts)",
-      filename: "KI-im-Bau-Prompt-Sammlung.pdf",
+      url: "/downloads/KI-im-Bau-Starter-Kit.zip",
     },
     {
       icon: <Grid3X3 className="w-5 h-5" />,
       title: "Tool-Vergleichsmatrix",
-      filename: "KI-im-Bau-Tool-Matrix.pdf",
+      url: "/downloads/KI-im-Bau-Starter-Kit.zip",
     },
     {
       icon: <CheckSquare className="w-5 h-5" />,
       title: "5 Checklisten zum Ausdrucken",
-      filename: "KI-im-Bau-Checklisten.pdf",
+      url: "/downloads/KI-im-Bau-Starter-Kit.zip",
     },
   ];
 
@@ -80,10 +80,12 @@ function ThankYouContent() {
                   </div>
                   <span className="font-medium text-gray-900">{item.title}</span>
                 </div>
-                <Button variant="secondary" size="sm">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download
-                </Button>
+                <a href={item.url} download>
+                  <Button variant="secondary" size="sm">
+                    <Download className="w-4 h-4 mr-2" />
+                    Download
+                  </Button>
+                </a>
               </div>
             ))}
           </div>

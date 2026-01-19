@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
+import { sendProductDeliveryEmail } from "@/lib/resend";
 import Stripe from "stripe";
 
 export async function POST(request: NextRequest) {
@@ -36,6 +37,7 @@ export async function POST(request: NextRequest) {
 
       // Get customer email
       const customerEmail = session.customer_details?.email;
+      const customerName = session.customer_details?.name || undefined;
       const customerId = session.customer as string;
       const sessionId = session.id;
       const includeBump = session.metadata?.includeBump === "true";
@@ -50,11 +52,27 @@ export async function POST(request: NextRequest) {
         amountTotal: session.amount_total,
       });
 
-      // TODO: Implement your delivery logic here
-      // - Send email with download links
-      // - Add to email list
-      // - Update database
-      // - etc.
+      // Send product delivery email
+      if (customerEmail) {
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+        const downloadUrl = `${baseUrl}/downloads/KI-im-Bau-Starter-Kit.zip`;
+
+        try {
+          await sendProductDeliveryEmail({
+            to: customerEmail,
+            customerName,
+            downloadUrl,
+            includeBump,
+            includeUpsell,
+          });
+          console.log("Product delivery email sent to:", customerEmail);
+        } catch (emailError) {
+          console.error("Failed to send product delivery email:", emailError);
+          // Don't fail the webhook - log the error for manual follow-up
+        }
+      } else {
+        console.warn("No customer email found for session:", sessionId);
+      }
 
       break;
     }

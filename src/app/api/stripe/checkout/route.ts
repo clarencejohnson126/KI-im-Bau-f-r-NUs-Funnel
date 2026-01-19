@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       mode: "payment",
       payment_method_types: ["card"],
       line_items: lineItems,
-      success_url: `${baseUrl}/upsell?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${baseUrl}/danke?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/checkout`,
       metadata: {
         includeBump: includeBump ? "true" : "false",
