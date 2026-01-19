@@ -7,7 +7,7 @@ import { Button } from "./ui/Button";
 import { DrillIcon, HardHatIcon, RulerIcon, HammerIcon, ExcavatorIcon, CableDrumIcon } from "./icons/ConstructionIcons";
 import { copy } from "../../content/copy";
 
-const VIDEO_URL = "https://eoahpwciwttfavzpqfnz.supabase.co/storage/v1/object/sign/unrelated/office%20portrait.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85YmJlMzI3NC0xODJjLTRmZGUtODk2NC1hMTcxNzVmY2I1NGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ1bnJlbGF0ZWQvb2ZmaWNlIHBvcnRyYWl0LnBuZyIsImlhdCI6MTc2ODc4MDIzNCwiZXhwIjoxOTU3OTk2MjM0fQ.04imUDky-xwnSH6FL_Sz9bae1-9d3rY9gbvj2S8Np2I";
+const VIDEO_URL = "https://eoahpwciwttfavzpqfnz.supabase.co/storage/v1/object/sign/unrelated/e-book%20video%20final.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85YmJlMzI3NC0xODJjLTRmZGUtODk2NC1hMTcxNzVmY2I1NGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ1bnJlbGF0ZWQvZS1ib29rIHZpZGVvIGZpbmFsLm1wNCIsImlhdCI6MTc2ODc4MDk0NSwiZXhwIjoxOTU3OTk2OTQ1fQ.VDAFOYf3zPS0h9myIkhtJjr4GzOyid4L9e5kFwasqB0";
 
 export function AnimatedHero() {
   const { hero } = copy;

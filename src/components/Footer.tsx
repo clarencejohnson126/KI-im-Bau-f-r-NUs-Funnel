@@ -42,11 +42,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Tagline */}
-        <div className="text-center mb-6">
-          <p className="text-gray-500 text-sm">{footer.tagline}</p>
-        </div>
-
         {/* Main Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Copyright */}
