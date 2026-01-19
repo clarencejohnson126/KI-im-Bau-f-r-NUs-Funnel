@@ -6,7 +6,13 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { includeBump } = body;
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    // Determine base URL: use custom domain in production, or Vercel URL, or localhost
+    const baseUrl =
+      process.env.NEXT_PUBLIC_BASE_URL && !process.env.NEXT_PUBLIC_BASE_URL.includes("localhost")
+        ? process.env.NEXT_PUBLIC_BASE_URL
+        : process.env.VERCEL_URL
+          ? `https://${process.env.VERCEL_URL}`
+          : "https://www.ki-bauunternehmer.de";
 
     // Build line items
     const lineItems: Array<{
