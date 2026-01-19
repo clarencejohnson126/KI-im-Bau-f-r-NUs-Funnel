@@ -19,6 +19,7 @@ interface SendProductEmailParams {
   to: string;
   customerName?: string;
   downloadUrl: string;
+  flipbookUrl: string;
   includeBump?: boolean;
   includeUpsell?: boolean;
 }
@@ -27,6 +28,7 @@ export async function sendProductDeliveryEmail({
   to,
   customerName,
   downloadUrl,
+  flipbookUrl,
   includeBump = false,
   includeUpsell = false,
 }: SendProductEmailParams) {
@@ -79,12 +81,19 @@ export async function sendProductDeliveryEmail({
                 dein Kauf war erfolgreich! Hier ist dein Download-Link für das <strong>KI im Bau Starter Kit</strong>:
               </p>
 
-              <!-- Download Button -->
+              <!-- Download Buttons -->
               <table role="presentation" style="width: 100%; border-collapse: collapse;">
                 <tr>
-                  <td align="center" style="padding: 20px 0;">
-                    <a href="${downloadUrl}" style="display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: #ffffff; text-decoration: none; font-size: 18px; font-weight: 600; border-radius: 8px; box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);">
-                      Jetzt herunterladen
+                  <td align="center" style="padding: 20px 0 10px;">
+                    <a href="${downloadUrl}" style="display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 8px; box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);">
+                      Starter Kit herunterladen (PDF, Prompts, Checklisten)
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding: 10px 0 20px;">
+                    <a href="${flipbookUrl}" style="display: inline-block; padding: 16px 32px; background: #ffffff; color: #f97316; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 8px; border: 2px solid #f97316;">
+                      Interaktives Flipbook herunterladen (HTML5)
                     </a>
                   </td>
                 </tr>
@@ -142,8 +151,13 @@ ${greeting},
 
 Vielen Dank für deinen Kauf!
 
-Dein Download-Link für das KI im Bau Starter Kit:
+Deine Download-Links für das KI im Bau Starter Kit:
+
+Starter Kit (PDF, Prompts, Checklisten):
 ${downloadUrl}
+
+Interaktives Flipbook (HTML5):
+${flipbookUrl}
 
 Dein Paket enthält:
 ${productList.map((item) => `- ${item}`).join("\n")}

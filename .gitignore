@@ -34,3 +34,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/videos/ebook-video.mp4
+
+# Large download files (served from Google Drive)
+public/downloads/*.zip
+public/downloads/KI-im-Bau-Starter-Kit/

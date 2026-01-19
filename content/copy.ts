@@ -3,7 +3,7 @@ export const copy = {
   meta: {
     title: "KI im Bau Starter Kit | Für Nachunternehmer",
     description:
-      "Das komplette Starter Kit für Nachunternehmer: E-Book (300+ Seiten), 50+ Prompts, Tool-Vergleich & Checklisten. Spare 40% deiner Arbeitszeit mit KI.",
+      "Das komplette Starter Kit für Nachunternehmer: E-Book (300+ Seiten), interaktives Flipbook, 50+ Prompts, Tool-Vergleich & Checklisten. Spare 40% deiner Arbeitszeit mit KI.",
   },
 
   // Hero Section
@@ -497,12 +497,20 @@ Das hier ist kein Spielzeug. Das ist ein Werkzeug. Und es wird alles verändern.
         icon: "presentation",
         valuePrice: "37 €",
       },
+      {
+        title: "Interaktives Flipbook",
+        subtitle: "HTML5 mit Animation",
+        description:
+          "Das komplette E-Book als interaktives Flipbook mit realistischem Blättereffekt. Perfekt für entspanntes Lesen am Bildschirm.",
+        icon: "layers",
+        valuePrice: "27 €",
+      },
     ],
     pricing: {
-      original: "237 €",
+      original: "264 €",
       current: "47 €",
-      savings: "Spare 190 €",
-      discount: "80% Rabatt",
+      savings: "Spare 217 €",
+      discount: "82% Rabatt",
     },
   },
 
@@ -573,10 +581,23 @@ Das hier ist kein Spielzeug. Das ist ein Werkzeug. Und es wird alles verändern.
           "Ideal zum Teilen mit dem Team",
         ],
       },
+      {
+        title: "Interaktives Flipbook (HTML5)",
+        value: "27 €",
+        description:
+          "Das komplette E-Book als interaktives Flipbook zum Blättern. Mit realistischer Seitenanimation – wie ein echtes Buch am Bildschirm.",
+        highlights: [
+          "Realistischer Blättereffekt wie ein echtes Buch",
+          "Funktioniert offline im Browser",
+          "Perfekt für entspanntes Lesen am Bildschirm",
+          "Zoom-Funktion für Details",
+          "Läuft auf jedem Gerät",
+        ],
+      },
     ],
-    totalValue: "237 €",
+    totalValue: "264 €",
     yourPrice: "47 €",
-    savings: "Du sparst 190 € (80%)",
+    savings: "Du sparst 217 € (82%)",
   },
 
   // Mid-page CTA
@@ -1024,14 +1045,15 @@ Warum? Weil ich weiß, dass das Starter Kit funktioniert. Die wenigen, die es zu
     subheadline: "Das bekommst du für nur 47 €",
     items: [
       { item: "E-Book: KI im Bau für Nachunternehmer (300+ Seiten)", value: "97 €" },
+      { item: "Interaktives Flipbook (HTML5 mit Animation)", value: "27 €" },
       { item: "Prompt-Sammlung: 50+ Copy & Paste Vorlagen", value: "47 €" },
       { item: "Tool-Vergleichsmatrix", value: "27 €" },
       { item: "5 praktische Checklisten", value: "29 €" },
       { item: "Kompakt-Präsentation (60 Seiten)", value: "37 €" },
     ],
-    totalValue: "Gesamtwert: 237 €",
+    totalValue: "Gesamtwert: 264 €",
     yourPrice: "Dein Preis heute: 47 €",
-    savings: "Du sparst: 190 € (80%)",
+    savings: "Du sparst: 217 € (82%)",
   },
 
   // Final CTA
@@ -1040,6 +1062,7 @@ Warum? Weil ich weiß, dass das Starter Kit funktioniert. Die wenigen, die es zu
     subheadline: "Hol dir das KI im Bau Starter Kit und leg sofort los.",
     bullets: [
       "E-Book (300+ Seiten, 21 Kapitel)",
+      "Interaktives Flipbook (HTML5)",
       "Kompakt-Präsentation (60 Seiten)",
       "50+ fertige Prompts zum Kopieren",
       "Tool-Vergleichsmatrix",
@@ -1139,6 +1162,7 @@ Los geht's.`,
       headline: "Deine Downloads",
       items: [
         { title: "E-Book: KI im Bau für Nachunternehmer (PDF)", filename: "ebook.pdf" },
+        { title: "Interaktives Flipbook (HTML5 mit Animation)", filename: "flipbook.zip" },
         { title: "Kompakt-Präsentation (PDF)", filename: "praesentation.pdf" },
         { title: "Prompt-Sammlung (PDF)", filename: "prompts.pdf" },
         { title: "Tool-Vergleichsmatrix (PDF)", filename: "matrix.pdf" },

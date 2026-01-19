@@ -54,14 +54,16 @@ export async function POST(request: NextRequest) {
 
       // Send product delivery email
       if (customerEmail) {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-        const downloadUrl = `${baseUrl}/downloads/KI-im-Bau-Starter-Kit.zip`;
+        // Google Drive download links
+        const downloadUrl = "https://drive.google.com/file/d/1ZTQJhqwzIkv35OKY52c4PxloQ41dluD4/view?usp=drive_link";
+        const flipbookUrl = "https://drive.google.com/file/d/1Uag-CD5k-SFLFBfFmgLfHj-F_sjJ3BYO/view?usp=sharing";
 
         try {
           await sendProductDeliveryEmail({
             to: customerEmail,
             customerName,
             downloadUrl,
+            flipbookUrl,
             includeBump,
             includeUpsell,
           });
