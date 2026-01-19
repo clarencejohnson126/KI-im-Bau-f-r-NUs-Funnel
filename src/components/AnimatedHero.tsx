@@ -153,12 +153,23 @@ export function AnimatedHero() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 rounded-full px-5 py-2.5">
-            <Sparkles className="w-4 h-4 text-orange-400" />
-            <span className="text-orange-400 font-medium text-sm">
-              {hero.badge}
+          <motion.span
+            className="inline-flex items-center gap-3 bg-orange-500/10 border border-orange-500/30 rounded-full px-6 py-3"
+            animate={{
+              boxShadow: [
+                "0 0 0 0 rgba(249, 115, 22, 0.4)",
+                "0 0 0 12px rgba(249, 115, 22, 0)",
+                "0 0 0 0 rgba(249, 115, 22, 0)"
+              ]
+            }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Sparkles className="w-5 h-5 text-orange-400" />
+            <span className="text-orange-400 font-medium">
+              <span className="text-lg md:text-xl">Für Nachunternehmer im Bau</span>
+              <span className="text-sm md:text-base ml-1">mit bis zu 50 Mitarbeiter</span>
             </span>
-          </span>
+          </motion.span>
         </motion.div>
 
         {/* Headline with typewriter effect */}
