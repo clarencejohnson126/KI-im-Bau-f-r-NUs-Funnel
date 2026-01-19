@@ -25,23 +25,23 @@ function ThankYouContent() {
   const downloadItems = [
     {
       icon: <BookOpen className="w-5 h-5" />,
-      title: "E-Book: KI im Bau für Nachunternehmer",
-      url: "/downloads/KI-im-Bau-Starter-Kit.zip",
+      title: "E-Book: KI im Bau für Nachunternehmer (300+ Seiten)",
+    },
+    {
+      icon: <FileText className="w-5 h-5" />,
+      title: "Kompakt-Präsentation (60 Seiten)",
     },
     {
       icon: <FileText className="w-5 h-5" />,
       title: "Prompt-Sammlung (50+ Prompts)",
-      url: "/downloads/KI-im-Bau-Starter-Kit.zip",
     },
     {
       icon: <Grid3X3 className="w-5 h-5" />,
       title: "Tool-Vergleichsmatrix",
-      url: "/downloads/KI-im-Bau-Starter-Kit.zip",
     },
     {
       icon: <CheckSquare className="w-5 h-5" />,
       title: "5 Checklisten zum Ausdrucken",
-      url: "/downloads/KI-im-Bau-Starter-Kit.zip",
     },
   ];
 
@@ -68,27 +68,26 @@ function ThankYouContent() {
             </h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 mb-6">
             {downloadItems.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
-                    {item.icon}
-                  </div>
-                  <span className="font-medium text-gray-900">{item.title}</span>
+                <div className="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
+                  {item.icon}
                 </div>
-                <a href={item.url} download>
-                  <Button variant="secondary" size="sm">
-                    <Download className="w-4 h-4 mr-2" />
-                    Download
-                  </Button>
-                </a>
+                <span className="font-medium text-gray-900">{item.title}</span>
               </div>
             ))}
           </div>
+
+          <a href="/downloads/KI-im-Bau-Starter-Kit.zip" download className="block">
+            <Button variant="primary" size="lg" fullWidth>
+              <Download className="w-5 h-5 mr-2" />
+              Alle Dateien herunterladen (ZIP)
+            </Button>
+          </a>
 
           <p className="text-sm text-gray-500 mt-4 text-center">
             Die Download-Links wurden auch an deine E-Mail gesendet.
