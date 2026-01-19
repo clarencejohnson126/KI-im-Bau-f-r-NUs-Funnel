@@ -1,7 +1,8 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
+import { trackPurchase } from "@/lib/meta-pixel";
 import Link from "next/link";
 import {
   CheckCircle2,
@@ -22,6 +23,19 @@ function ThankYouContent() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const { thankYou } = copy;
+  const hasFiredPurchase = useRef(false);
+
+  // Fire Meta Pixel Purchase event once on page load
+  useEffect(() => {
+    if (!hasFiredPurchase.current && sessionId) {
+      trackPurchase({
+        content_name: "KI im Bau Starter Kit",
+        currency: "EUR",
+        // Value is not available client-side, Meta will still track the conversion
+      });
+      hasFiredPurchase.current = true;
+    }
+  }, [sessionId]);
 
   const downloadItems = [
     {

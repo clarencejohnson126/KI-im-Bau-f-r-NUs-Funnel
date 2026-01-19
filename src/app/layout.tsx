@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import { MetaPixel } from "@/components/MetaPixel";
 
 export const metadata: Metadata = {
   title: "KI im Bau Starter Kit | Für Nachunternehmer",
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body>
+        <MetaPixel />
         {children}
         {/* Subtle Noise Overlay for Texture */}
         <div className="noise-overlay" aria-hidden="true" />
