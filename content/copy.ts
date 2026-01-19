@@ -9,7 +9,7 @@ export const copy = {
   // Hero Section
   hero: {
     badge: "Für Nachunternehmer im Bau",
-    headline: "40% deiner Arbeitszeit verschwindet\nim Papierkrieg",
+    headline: "40% deiner Zeit im Baubetrieb frisst der Papierkrieg!",
     subheadline:
       "Das KI im Bau Starter Kit zeigt dir in 300+ Seiten, wie du Ausschreibungen, Angebote und Dokumentation mit KI 9x schneller erledigst – ohne technisches Vorwissen.",
     cta: "Jetzt Starter Kit sichern",

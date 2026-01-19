@@ -178,19 +178,32 @@ export function AnimatedHero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.3 + (lineIndex * 3 + wordIndex) * 0.1 }}
                   className={
-                    word === "verschwindet"
+                    word === "frisst"
                       ? "text-orange-500 relative inline"
                       : "inline"
                   }
                 >
                   {word}
-                  {word === "verschwindet" && (
-                    <motion.span
-                      className="absolute -bottom-1 left-0 right-0 h-1 bg-orange-500"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ duration: 0.4, delay: 1 }}
-                    />
+                  {word === "frisst" && (
+                    <motion.svg
+                      className="absolute -bottom-2 left-0 w-full h-3"
+                      viewBox="0 0 100 12"
+                      preserveAspectRatio="none"
+                      initial={{ pathLength: 0, opacity: 0 }}
+                      animate={{ pathLength: 1, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+                    >
+                      <motion.path
+                        d="M0 8 Q25 2, 50 6 T100 4"
+                        fill="none"
+                        stroke="#f97316"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+                      />
+                    </motion.svg>
                   )}
                   {wordIndex < line.split(" ").length - 1 && " "}
                 </motion.span>
