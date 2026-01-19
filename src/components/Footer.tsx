@@ -14,8 +14,9 @@ export function Footer() {
         {/* Rebelz AI Products Section */}
         <div className="border-b border-gray-800 pb-8 mb-8">
           <div className="text-center mb-6">
-            <h3 className="font-heading text-lg text-orange-400 mb-2">
-              {footer.rebelzAI.headline}
+            <h3 className="font-display text-white mb-2">
+              <span className="text-base">Ein Produkt von</span>{" "}
+              <span className="text-2xl">Rebelz AI</span>
             </h3>
             <p className="text-gray-400 text-sm max-w-2xl mx-auto">
               {footer.rebelzAI.description}
