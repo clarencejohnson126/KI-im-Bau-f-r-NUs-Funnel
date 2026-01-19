@@ -2,26 +2,22 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Shield,
   Lock,
-  Check,
   ArrowLeft,
   CreditCard,
-  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { copy } from "../../../content/copy";
 
 export default function CheckoutPage() {
-  const [includeBump, setIncludeBump] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { product, bumpOffer, hero } = copy;
+  const { product } = copy;
 
   const basePrice = 47;
-  const bumpPrice = 19;
-  const totalPrice = includeBump ? basePrice + bumpPrice : basePrice;
 
   const handleCheckout = async () => {
     setIsLoading(true);
@@ -32,7 +28,7 @@ export default function CheckoutPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          includeBump,
+          includeBump: false,
         }),
       });
 
@@ -76,8 +72,14 @@ export default function CheckoutPage() {
             {/* Main Product */}
             <Card variant="bordered" className="mb-6">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-20 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">E-BOOK</span>
+                <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/bau/ki-bau-cover.png"
+                    alt="KI & Bau E-Book"
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-gray-900">
@@ -98,49 +100,6 @@ export default function CheckoutPage() {
               </div>
             </Card>
 
-            {/* Bump Offer */}
-            <Card
-              variant={includeBump ? "elevated" : "bordered"}
-              className={`mb-6 cursor-pointer transition-all ${
-                includeBump
-                  ? "border-2 border-orange-500 bg-orange-50"
-                  : "hover:border-orange-300"
-              }`}
-              onClick={() => setIncludeBump(!includeBump)}
-            >
-              <div className="flex items-start gap-4">
-                {/* Checkbox */}
-                <div
-                  className={`flex-shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-colors ${
-                    includeBump
-                      ? "bg-orange-500 border-orange-500"
-                      : "border-gray-300"
-                  }`}
-                >
-                  {includeBump && <Check className="w-4 h-4 text-white" />}
-                </div>
-
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Sparkles className="w-4 h-4 text-orange-500" />
-                    <span className="text-sm font-bold text-orange-600 uppercase">
-                      Einmaliges Angebot
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-gray-900">
-                    {bumpOffer.headline}{" "}
-                    <span className="text-orange-600">{bumpOffer.price}</span>
-                  </h3>
-                  <p className="text-sm text-gray-600 mt-1">
-                    {bumpOffer.description}
-                  </p>
-                  <p className="text-sm font-medium text-orange-600 mt-2">
-                    {bumpOffer.checkbox}
-                  </p>
-                </div>
-              </div>
-            </Card>
-
             {/* Order Total */}
             <Card variant="bordered" className="bg-gray-50">
               <div className="space-y-2">
@@ -148,16 +107,10 @@ export default function CheckoutPage() {
                   <span>Starter Kit</span>
                   <span>{basePrice} €</span>
                 </div>
-                {includeBump && (
-                  <div className="flex justify-between text-gray-600">
-                    <span>Premium Vorlagen-Paket</span>
-                    <span>{bumpPrice} €</span>
-                  </div>
-                )}
                 <div className="border-t border-gray-200 pt-2 mt-2">
                   <div className="flex justify-between font-bold text-lg">
                     <span>Gesamt</span>
-                    <span className="text-orange-600">{totalPrice} €</span>
+                    <span className="text-orange-600">{basePrice} €</span>
                   </div>
                 </div>
               </div>
@@ -216,7 +169,7 @@ export default function CheckoutPage() {
                 {isLoading ? (
                   "Wird geladen..."
                 ) : (
-                  <>Jetzt für {totalPrice} € kaufen</>
+                  <>Jetzt für {basePrice} € kaufen</>
                 )}
               </Button>
 
