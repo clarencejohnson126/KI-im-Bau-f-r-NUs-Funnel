@@ -12,6 +12,7 @@ import {
   BookOpen,
   Grid3X3,
   CheckSquare,
+  Layers,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -26,6 +27,10 @@ function ThankYouContent() {
     {
       icon: <BookOpen className="w-5 h-5" />,
       title: "E-Book: KI im Bau für Nachunternehmer (300+ Seiten)",
+    },
+    {
+      icon: <Layers className="w-5 h-5" />,
+      title: "Interaktives Flipbook (HTML5 mit Animation)",
     },
     {
       icon: <FileText className="w-5 h-5" />,
@@ -82,12 +87,20 @@ function ThankYouContent() {
             ))}
           </div>
 
-          <a href="/downloads/KI-im-Bau-Starter-Kit.zip" download className="block">
-            <Button variant="primary" size="lg" fullWidth>
-              <Download className="w-5 h-5 mr-2" />
-              Alle Dateien herunterladen (ZIP)
-            </Button>
-          </a>
+          <div className="space-y-3">
+            <a href="/downloads/KI-im-Bau-Starter-Kit.zip" download className="block">
+              <Button variant="primary" size="lg" fullWidth>
+                <Download className="w-5 h-5 mr-2" />
+                Starter Kit herunterladen (PDF, Prompts, Checklisten)
+              </Button>
+            </a>
+            <a href="/downloads/KI-im-Bau-Flipbook.zip" download className="block">
+              <Button variant="secondary" size="lg" fullWidth>
+                <Layers className="w-5 h-5 mr-2" />
+                Interaktives Flipbook herunterladen (HTML5)
+              </Button>
+            </a>
+          </div>
 
           <p className="text-sm text-gray-500 mt-4 text-center">
             Die Download-Links wurden auch an deine E-Mail gesendet.
