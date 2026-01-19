@@ -102,7 +102,7 @@ function ThankYouContent() {
           </div>
 
           <div className="space-y-3">
-            <a href="/downloads/KI-im-Bau-Starter-Kit.zip" download className="block">
+            <a href="https://drive.google.com/file/d/1ZTQJhqwzIkv35OKY52c4PxloQ41dluD4/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="block">
               <Button variant="primary" size="lg" fullWidth>
                 <Download className="w-5 h-5 mr-2" />
                 Starter Kit herunterladen (PDF, Prompts, Checklisten)
