@@ -11,7 +11,7 @@ export const copy = {
     badge: "Für Nachunternehmer im Bau",
     headline: "40% deiner Zeit im Baubetrieb frisst der Papierkrieg!",
     subheadline:
-      "Das KI Bau Starter Kit zeigt dir in 300+ Seiten, wie du Ausschreibungen, Angebote und Dokumentation mit KI 9x schneller erledigst – ohne technisches KI-Vorwissen.",
+      "Das KI Bau Starter Kit zeigt dir in 300+ Seiten, wie du Ausschreibungen, Angebote und Dokumentation 9x schneller erledigst – ohne technisches KI-Vorwissen.",
     cta: "Jetzt Starter Kit sichern",
     price: "47 €",
     trustBadges: [
