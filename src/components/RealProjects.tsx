@@ -95,14 +95,6 @@ export function RealProjects() {
               className="w-full h-auto object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-concrete-950 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <div className="flex flex-wrap items-center gap-4">
-                <span className="bg-orange-500 text-white px-4 py-2 rounded-lg font-heading">
-                  Omniturm Frankfurt
-                </span>
-                <span className="text-white/80">190m Höhe | Deutschlands höchstes Hybridhochhaus</span>
-              </div>
-            </div>
           </div>
         </ScrollReveal>
 
