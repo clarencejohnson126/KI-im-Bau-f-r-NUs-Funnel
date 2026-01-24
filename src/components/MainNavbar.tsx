@@ -29,15 +29,37 @@ export function MainNavbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-end">
-          <Link
-            href="/blog"
-            className={`font-medium transition-all duration-300 px-4 py-2 rounded-lg ${
-              isScrolled
-                ? "text-white hover:text-orange-400"
-                : "text-white/80 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            Blog
+          <Link href="/blog">
+            <motion.div
+              className={`relative font-bold text-lg px-5 py-2.5 rounded-xl border-2 transition-colors duration-300 ${
+                isScrolled
+                  ? "bg-orange-500 border-orange-500 text-white hover:bg-orange-600"
+                  : "bg-orange-500/90 border-orange-400 text-white hover:bg-orange-500"
+              }`}
+              animate={{
+                scale: [1, 1.05, 1],
+                boxShadow: [
+                  "0 0 0 0 rgba(249, 115, 22, 0)",
+                  "0 0 20px 4px rgba(249, 115, 22, 0.4)",
+                  "0 0 0 0 rgba(249, 115, 22, 0)",
+                ],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                Blog
+              </span>
+            </motion.div>
           </Link>
         </div>
       </div>
