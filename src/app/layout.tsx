@@ -4,6 +4,7 @@ import { MetaPixel } from "@/components/MetaPixel";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ki-bauunternehmer.de"),
   title: "KI im Bau Starter Kit | Für Nachunternehmer",
   description:
     "Das komplette Starter Kit für Nachunternehmer: E-Book (300+ Seiten), 50+ Prompts, Tool-Vergleich & Checklisten. Spare 40% deiner Arbeitszeit mit KI.",

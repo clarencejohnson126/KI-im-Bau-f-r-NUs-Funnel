@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { AnimatedHero } from "@/components/AnimatedHero";
+import { MainNavbar } from "@/components/MainNavbar";
 import { OpeningHook } from "@/components/OpeningHook";
 import { ProblemSection } from "@/components/ProblemSection";
 import { DailyReality } from "@/components/DailyReality";
@@ -47,6 +48,11 @@ import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 export default function Home() {
   return (
     <main>
+      {/* ============================================== */}
+      {/* NAVIGATION - Blog link top right */}
+      {/* ============================================== */}
+      <MainNavbar />
+
       {/* ============================================== */}
       {/* SECTION 1: HOOK - Grab attention immediately */}
       {/* Animated hero with parallax construction tools */}
