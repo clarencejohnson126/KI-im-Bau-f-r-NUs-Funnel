@@ -6,7 +6,7 @@ import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
 export const metadata: Metadata = {
   title: "Blog | KI für Nachunternehmer im Bau",
   description:
-    "Praxis-Tipps wie KI und Automatisierung Nachunternehmern in der Baubranche Zeit und Geld sparen. Alle 2 Tage ein neuer Artikel.",
+    "Praxis-Tipps wie KI und Automatisierung Nachunternehmern in der Baubranche Zeit und Geld sparen.",
   keywords: [
     "KI Baubranche",
     "Automatisierung Nachunternehmer",
@@ -41,9 +41,6 @@ export default async function BlogPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block bg-orange-500/10 border border-orange-500/30 rounded-full px-4 py-2 text-orange-400 text-sm font-medium mb-6">
-            Alle 2 Tage ein neuer Artikel
-          </span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
             KI & AUTOMATISIERUNG
             <br />
