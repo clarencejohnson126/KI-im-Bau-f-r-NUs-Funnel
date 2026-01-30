@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "de_DE",
     publishedTime: "2026-01-24",
     authors: ["Clarence Johnson"],
-    images: ["/Blog/Artikel 1/header.png"],
+    images: ["/blog/artikel-1/header.png"],
   },
   alternates: {
     canonical: "https://ki-bauunternehmer.de/blog/ki-fuer-nachunternehmer-einfuehrung",
@@ -119,7 +119,7 @@ export default function ArticlePage() {
           author="Clarence Johnson"
           readingTime="8 Min. Lesezeit"
           category="KI & Automatisierung"
-          headerImage="/Blog/Artikel 1/header.png"
+          headerImage="/blog/artikel-1/header.png"
           headerImageAlt="Deutscher Bauunternehmer mit KI-Interface auf einer Baustelle"
         />
 
@@ -172,7 +172,7 @@ export default function ArticlePage() {
 
             {/* Chart Image */}
             <BlogImage
-              src="/Blog/Artikel 1/chart.png"
+              src="/blog/artikel-1/chart.png"
               alt="Kreisdiagramm: 45% Verwaltung, 35% Eigentliche Arbeit, 20% Koordination"
               caption="Arbeitstag eines deutschen Subunternehmers - 45% gehen für Verwaltung drauf"
             />
@@ -241,7 +241,7 @@ export default function ArticlePage() {
 
             {/* Workflow Image */}
             <BlogImage
-              src="/Blog/Artikel 1/workflow.png"
+              src="/blog/artikel-1/workflow.png"
               alt="KI-Workflow: Problem → Input → Processing → Output"
               caption="So funktioniert KI in der Praxis: Chaos rein, Struktur raus"
             />
