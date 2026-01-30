@@ -16,10 +16,15 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Generate static params for all posts
+// Slugs that have dedicated static pages (not using the dynamic route)
+const STATIC_PAGE_SLUGS = ["ki-fuer-nachunternehmer-einfuehrung"];
+
+// Generate static params for all posts except those with static pages
 export async function generateStaticParams() {
   const posts = await getAllPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  return posts
+    .filter((post) => !STATIC_PAGE_SLUGS.includes(post.slug))
+    .map((post) => ({ slug: post.slug }));
 }
 
 // Generate metadata for SEO
