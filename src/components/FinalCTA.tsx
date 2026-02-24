@@ -61,10 +61,10 @@ export function FinalCTA() {
 
             <div className="relative bg-white rounded-[2rem] overflow-hidden">
               {/* Top Banner */}
-              <div className="bg-gradient-to-r from-orange-500 to-orange-600 py-3 px-6 text-center">
+              <div className="bg-gradient-to-r from-green-500 to-green-600 py-3 px-6 text-center">
                 <p className="text-white font-heading font-semibold flex items-center justify-center gap-2">
                   <Zap className="w-5 h-5" />
-                  Einmaliges Angebot – Spare {product.pricing.savings.split(' ')[1]}
+                  Komplett kostenlos – Wert: {product.pricing.original}
                 </p>
               </div>
 
@@ -92,7 +92,7 @@ export function FinalCTA() {
                       <div className="flex flex-wrap gap-6 text-sm text-concrete-500">
                         <div className="flex items-center gap-2">
                           <Shield className="w-5 h-5 text-green-500" />
-                          <span>14-Tage Garantie</span>
+                          <span>100% kostenlos</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Clock className="w-5 h-5 text-blue-500" />
@@ -110,11 +110,11 @@ export function FinalCTA() {
                         <span className="text-xl text-concrete-400 line-through">
                           {product.pricing.original}
                         </span>
-                        <span className="bg-red-100 text-red-600 text-sm font-bold px-3 py-1 rounded-full">
+                        <span className="bg-green-100 text-green-600 text-sm font-bold px-3 py-1 rounded-full">
                           {product.pricing.discount}
                         </span>
                       </div>
-                      <div className="font-display text-7xl md:text-8xl text-concrete-900 leading-none">
+                      <div className="font-display text-6xl md:text-7xl text-green-600 leading-none">
                         {product.pricing.current}
                       </div>
                       <p className="text-green-600 font-semibold mt-2 text-lg">
@@ -140,7 +140,7 @@ export function FinalCTA() {
                       {finalCta.microCopy}
                     </p>
 
-                    {/* Guarantee Box */}
+                    {/* Free Box */}
                     <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
                       <div className="flex items-center gap-3">
                         <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
@@ -148,10 +148,10 @@ export function FinalCTA() {
                         </div>
                         <div>
                           <p className="font-semibold text-green-800 text-sm">
-                            Kein Risiko
+                            Kein Haken
                           </p>
                           <p className="text-green-700 text-xs">
-                            14 Tage Geld-zurück-Garantie, ohne Wenn und Aber
+                            100% kostenlos – kein Abo, keine versteckten Kosten
                           </p>
                         </div>
                       </div>

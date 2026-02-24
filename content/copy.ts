@@ -12,10 +12,10 @@ export const copy = {
     headline: "40% deiner Zeit im Baubetrieb frisst der Papierkrieg!",
     subheadline:
       "Das KI Bau Starter Kit zeigt dir in 300+ Seiten, wie du Ausschreibungen, Angebote und Dokumentation 9x schneller erledigst – ohne technisches KI-Vorwissen.",
-    cta: "Jetzt Starter Kit sichern",
-    price: "47 €",
+    cta: "Jetzt kostenlos herunterladen",
+    price: "Kostenlos",
     trustBadges: [
-      "14 Tage Geld-zurück-Garantie",
+      "100% kostenlos",
       "Sofort-Download",
       "DSGVO-konform",
     ],
@@ -508,9 +508,9 @@ Das hier ist kein Spielzeug. Das ist ein Werkzeug. Und es wird alles verändern.
     ],
     pricing: {
       original: "264 €",
-      current: "47 €",
-      savings: "Spare 217 €",
-      discount: "82% Rabatt",
+      current: "Kostenlos",
+      savings: "Du sparst 264 €",
+      discount: "100% Gratis",
     },
   },
 
@@ -596,17 +596,17 @@ Das hier ist kein Spielzeug. Das ist ein Werkzeug. Und es wird alles verändern.
       },
     ],
     totalValue: "264 €",
-    yourPrice: "47 €",
-    savings: "Du sparst 217 € (82%)",
+    yourPrice: "Kostenlos",
+    savings: "Du sparst 264 € (100%)",
   },
 
   // Mid-page CTA
   midPageCTA: {
     headline: "Bereit, deine Zeit zurückzuholen?",
     subheadline:
-      "Hol dir das komplette Starter Kit und starte noch heute.",
-    cta: "Jetzt für 47 € sichern",
-    reminder: "14-Tage Geld-zurück-Garantie • Sofort-Download • Kein Abo",
+      "Hol dir das komplette Starter Kit kostenlos – nur E-Mail-Adresse nötig.",
+    cta: "Jetzt kostenlos herunterladen",
+    reminder: "100% kostenlos • Sofort-Download • Kein Abo",
   },
 
   // Benefits Section
@@ -888,9 +888,9 @@ Ich kenne nicht nur die Theorie aus dem Studium. Ich kenne den Dreck, den Stress
           "Berechtigte Sorge. Deshalb enthält das Starter Kit ein komplettes Kapitel zu DSGVO-konformer KI-Nutzung (Kapitel 6). Du lernst, welche Tools du für was nutzen kannst – und welche nicht. Mit Anonymisierung und den richtigen Einstellungen bist du auf der sicheren Seite.",
       },
       {
-        objection: '"47 € ist mir zu teuer"',
+        objection: '"Was ist der Haken? Warum ist das kostenlos?"',
         response:
-          "Ich verstehe. Rechnen wir mal: Wenn du nur EINEN Nachtrag findest, den du sonst übersehen hättest (Durchschnitt: 5.000 €), hast du das Investment sofort wieder raus. Klaus R. hat letzte Woche 7.800 € gerettet. Ein einziges Angebot, das du schneller rausschickst und deshalb gewinnst, ist vielleicht 50.000 € wert. Der ROI? Unbezahlbar. Ist dir das 47 € wert?",
+          "Kein Haken. Ich möchte, dass möglichst viele Nachunternehmer von KI profitieren. Das Starter Kit ist meine Visitenkarte – wenn du zufrieden bist, erzählst du es weiter oder nutzt in Zukunft eines unserer Premium-Produkte. Win-Win.",
       },
       {
         objection: '"Ich habe keine Zeit, etwas Neues zu lernen"',
@@ -954,26 +954,24 @@ Ich kenne nicht nur die Theorie aus dem Studium. Ich kenne den Dreck, den Stress
 
   // Guarantee - Extended
   guarantee: {
-    headline: "14-Tage Geld-zurück-Garantie",
+    headline: "100% kostenlos – kein Risiko",
     description:
-      "Teste das Starter Kit 14 Tage lang. Wenn du nicht überzeugt bist, bekommst du dein Geld zurück – ohne Wenn und Aber. Eine kurze E-Mail genügt.",
-    note: "Kein Risiko für dich. Das Risiko trage ich.",
+      "Das Starter Kit ist komplett kostenlos. Kein Haken, kein Abo, keine versteckten Kosten. Einfach E-Mail eingeben, herunterladen und loslegen.",
+    note: "Null Risiko. Null Kosten. Nur Praxiswissen.",
     extended: {
       headline: "Mein Versprechen an dich",
-      text: `Ich bin so überzeugt von diesem Starter Kit, dass ich das volle Risiko trage.
+      text: `Ich bin so überzeugt von diesem Starter Kit, dass ich es kostenlos zur Verfügung stelle.
 
-Wenn du nach 14 Tagen nicht mindestens EINE Sache gefunden hast, die dir Zeit spart oder Geld bringt, bekommst du dein Geld zurück.
+Kein Haken. Kein Abo. Keine versteckten Kosten.
 
-Keine Fragen. Kein Kleingedrucktes. Kein Drama.
+Warum kostenlos? Weil ich möchte, dass möglichst viele Nachunternehmer von KI profitieren. Das ist meine Visitenkarte – und ich bin überzeugt, dass du den Wert sofort erkennst.
 
-Schreib mir einfach eine E-Mail an thinkbig@rebelz-ai.com, und ich erstatte dir die 47 € innerhalb von 48 Stunden.
-
-Warum? Weil ich weiß, dass das Starter Kit funktioniert. Die wenigen, die es zurückgeben, haben es meistens gar nicht erst ausprobiert.`,
+Alles, was ich brauche, ist deine E-Mail-Adresse, damit ich dir die Download-Links schicken kann.`,
       bulletPoints: [
-        "14 Tage voller Zugang",
+        "100% kostenlos",
         "Alle Downloads gehören dir",
-        "Rückerstattung ohne Fragen",
-        "Per E-Mail – keine Hotline, kein Stress",
+        "Kein Abo, keine Folgekosten",
+        "Sofortiger Zugang nach E-Mail-Eingabe",
       ],
     },
   },
@@ -989,14 +987,14 @@ Warum? Weil ich weiß, dass das Starter Kit funktioniert. Die wenigen, die es zu
           "Während du noch überlegst, nutzen deine Konkurrenten bereits KI. Sie erstellen Angebote schneller, erkennen Nachträge zuverlässiger, kommunizieren professioneller. Jeden Tag, den du wartest, vergrößern sie ihren Vorsprung.",
       },
       {
-        title: "Der Preis von 47 € ist ein Einführungspreis",
+        title: "Aktuell komplett kostenlos – aber nicht für immer",
         description:
-          "Das Starter Kit ist über 200 € wert – und der Preis wird steigen, sobald mehr Nachunternehmer den Wert erkennen. Aktuell bekommst du es für 47 € – solange der Vorrat reicht.",
+          "Das Starter Kit hat einen Wert von über 264 €. Aktuell bekommst du es kostenlos – aber dieses Angebot wird nicht ewig bestehen. Greif zu, solange es noch gratis ist.",
       },
       {
         title: "Jeder Tag kostet dich echtes Geld",
         description:
-          "Wenn du nur 1 Stunde pro Tag sparst (konservativ geschätzt), sind das bei einem Stundensatz von 60 € etwa 60 € pro Tag. 47 € für das Kit sind also nach weniger als einem Tag wieder drin.",
+          "Wenn du nur 1 Stunde pro Tag sparst (konservativ geschätzt), sind das bei einem Stundensatz von 60 € etwa 60 € pro Tag. Das Starter Kit ist kostenlos – du hast also nichts zu verlieren, aber alles zu gewinnen.",
       },
     ],
     callout: {
@@ -1005,8 +1003,8 @@ Warum? Weil ich weiß, dass das Starter Kit funktioniert. Die wenigen, die es zu
         "1 Stunde gespart pro Tag × 60 €/h = 60 €/Tag",
         "20 Arbeitstage/Monat = 1.200 €/Monat",
         "12 Monate = 14.400 €/Jahr",
-        "Investment für das Starter Kit: 47 €",
-        "ROI: Unbezahlbar",
+        "Investment für das Starter Kit: 0 € (kostenlos!)",
+        "ROI: Unendlich",
       ],
     },
   },
@@ -1042,7 +1040,7 @@ Warum? Weil ich weiß, dass das Starter Kit funktioniert. Die wenigen, die es zu
   // Final Stack Recap
   finalStackRecap: {
     headline: "Nochmal zum Mitschreiben:",
-    subheadline: "Das bekommst du für nur 47 €",
+    subheadline: "Das alles bekommst du komplett kostenlos",
     items: [
       { item: "E-Book: KI im Bau für Nachunternehmer (300+ Seiten)", value: "97 €" },
       { item: "Interaktives Flipbook (HTML5 mit Animation)", value: "27 €" },
@@ -1052,14 +1050,14 @@ Warum? Weil ich weiß, dass das Starter Kit funktioniert. Die wenigen, die es zu
       { item: "Kompakt-Präsentation (60 Seiten)", value: "37 €" },
     ],
     totalValue: "Gesamtwert: 264 €",
-    yourPrice: "Dein Preis heute: 47 €",
-    savings: "Du sparst: 217 € (82%)",
+    yourPrice: "Dein Preis heute: Kostenlos",
+    savings: "Du sparst: 264 € (100%)",
   },
 
   // Final CTA
   finalCta: {
     headline: "Bereit, bis zu 25% deiner Zeit zurückzubekommen?",
-    subheadline: "Hol dir das KI im Bau Starter Kit und leg sofort los.",
+    subheadline: "Hol dir das KI im Bau Starter Kit kostenlos und leg sofort los.",
     bullets: [
       "E-Book (300+ Seiten, 21 Kapitel)",
       "Interaktives Flipbook (HTML5)",
@@ -1067,12 +1065,12 @@ Warum? Weil ich weiß, dass das Starter Kit funktioniert. Die wenigen, die es zu
       "50+ fertige Prompts zum Kopieren",
       "Tool-Vergleichsmatrix",
       "5 praktische Checklisten",
-      "14 Tage Geld-zurück-Garantie",
+      "100% kostenlos – kein Haken",
     ],
-    cta: "Jetzt für 47 € sichern",
-    microCopy: "Einmalzahlung • Sofort-Download • Kein Abo",
+    cta: "Jetzt kostenlos herunterladen",
+    microCopy: "Kostenlos • Sofort-Download • Kein Abo",
     closingLine:
-      "P.S.: Denk dran – du hast 14 Tage, um es risikofrei zu testen. Wenn es nicht funktioniert, bekommst du dein Geld zurück. Aber wenn es funktioniert, sparst du ab sofort 2-3 Stunden jeden Tag. Die Frage ist nicht, ob du es dir leisten kannst – sondern ob du es dir leisten kannst, es NICHT zu tun.",
+      "P.S.: Das Starter Kit ist aktuell komplett kostenlos. Kein Haken, kein Abo. Aber dieses Angebot wird nicht ewig bestehen. Hol es dir jetzt und spare ab sofort 2-3 Stunden jeden Tag.",
     lastWord: {
       headline: "Ein letztes Wort",
       text: `KI wird die Baubranche verändern. Das ist keine Frage des Ob, sondern des Wann.
@@ -1131,8 +1129,8 @@ Los geht's.`,
 
   // Thank You Page
   thankYou: {
-    headline: "Danke für deine Bestellung!",
-    subheadline: "Dein KI im Bau Starter Kit ist bereit zum Download.",
+    headline: "Dein Starter Kit ist bereit!",
+    subheadline: "Lade jetzt dein kostenloses KI im Bau Starter Kit herunter.",
     celebration:
       "Du hast gerade die beste Entscheidung für dein Business getroffen. Willkommen in der Zukunft des Baugewerbes!",
     nextSteps: {

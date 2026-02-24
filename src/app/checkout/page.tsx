@@ -5,9 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Shield,
-  Lock,
   ArrowLeft,
-  CreditCard,
+  Download,
+  Mail,
+  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -15,33 +16,40 @@ import { copy } from "../../../content/copy";
 
 export default function CheckoutPage() {
   const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const { product } = copy;
 
-  const basePrice = 47;
+  const handleDownload = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
 
-  const handleCheckout = async () => {
+    if (!email || !email.includes("@")) {
+      setError("Bitte gib eine gültige E-Mail-Adresse ein.");
+      return;
+    }
+
     setIsLoading(true);
     try {
-      const response = await fetch("/api/stripe/checkout", {
+      const response = await fetch("/api/download", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          includeBump: false,
-        }),
+        body: JSON.stringify({ email }),
       });
 
       const data = await response.json();
 
-      if (data.url) {
-        window.location.href = data.url;
+      if (data.success) {
+        window.location.href = "/danke";
       } else {
-        console.error("No checkout URL received");
+        setError(data.error || "Etwas ist schiefgelaufen. Bitte versuche es erneut.");
         setIsLoading(false);
       }
-    } catch (error) {
-      console.error("Checkout error:", error);
+    } catch (err) {
+      console.error("Download error:", err);
+      setError("Etwas ist schiefgelaufen. Bitte versuche es erneut.");
       setIsLoading(false);
     }
   };
@@ -63,10 +71,10 @@ export default function CheckoutPage() {
 
       <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Left Column - Order Summary */}
+          {/* Left Column - What you get */}
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Deine Bestellung
+              Dein kostenloses Starter Kit
             </h1>
 
             {/* Main Product */}
@@ -88,11 +96,11 @@ export default function CheckoutPage() {
                   <p className="text-sm text-gray-500 mt-1">
                     E-Book (300+ Seiten) + Prompts + Checklisten
                   </p>
-                  <div className="mt-2">
-                    <span className="text-lg font-bold text-gray-900">
-                      {basePrice} €
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="text-lg font-bold text-green-600">
+                      Kostenlos
                     </span>
-                    <span className="text-sm text-gray-400 line-through ml-2">
+                    <span className="text-sm text-gray-400 line-through">
                       {product.pricing.original}
                     </span>
                   </div>
@@ -100,19 +108,23 @@ export default function CheckoutPage() {
               </div>
             </Card>
 
-            {/* Order Total */}
+            {/* What's included */}
             <Card variant="bordered" className="bg-gray-50">
-              <div className="space-y-2">
-                <div className="flex justify-between text-gray-600">
-                  <span>Starter Kit</span>
-                  <span>{basePrice} €</span>
-                </div>
-                <div className="border-t border-gray-200 pt-2 mt-2">
-                  <div className="flex justify-between font-bold text-lg">
-                    <span>Gesamt</span>
-                    <span className="text-orange-600">{basePrice} €</span>
+              <h3 className="font-semibold text-gray-900 mb-4">Das bekommst du:</h3>
+              <div className="space-y-3">
+                {[
+                  "E-Book: 300+ Seiten Praxiswissen",
+                  "50+ fertige Copy & Paste Prompts",
+                  "Tool-Vergleichsmatrix (ChatGPT, Claude, Gemini, Grok)",
+                  "5 Praxis-Checklisten zum Ausdrucken",
+                  "Kompakt-Präsentation (60 Seiten)",
+                  "Interaktives Flipbook (HTML5)",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                    <span className="text-sm text-gray-700">{item}</span>
                   </div>
-                </div>
+                ))}
               </div>
             </Card>
 
@@ -120,85 +132,89 @@ export default function CheckoutPage() {
             <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-green-500" />
-                <span>14 Tage Geld-zurück</span>
+                <span>100% kostenlos</span>
               </div>
               <div className="flex items-center gap-2">
-                <Lock className="w-4 h-4 text-green-500" />
-                <span>Sichere Zahlung</span>
+                <Download className="w-4 h-4 text-green-500" />
+                <span>Sofort-Download</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Payment */}
+          {/* Right Column - Email Form */}
           <div>
             <Card variant="elevated" padding="lg">
               <div className="flex items-center gap-2 mb-6">
-                <CreditCard className="w-5 h-5 text-gray-600" />
+                <Mail className="w-5 h-5 text-orange-500" />
                 <h2 className="text-xl font-bold text-gray-900">
-                  Zahlungsmethode
+                  Kostenlos herunterladen
                 </h2>
               </div>
 
-              {/* Payment Info */}
-              <div className="bg-gray-50 rounded-lg p-6 mb-6 text-center">
-                <Lock className="w-8 h-8 text-gray-400 mx-auto mb-3" />
-                <p className="text-gray-600">
-                  Du wirst zu Stripe weitergeleitet, um die Zahlung sicher
-                  abzuschließen.
-                </p>
-                <div className="flex justify-center gap-2 mt-4">
-                  <div className="w-10 h-6 bg-gray-200 rounded"></div>
-                  <div className="w-10 h-6 bg-gray-200 rounded"></div>
-                  <div className="w-10 h-6 bg-gray-200 rounded"></div>
-                  <div className="w-10 h-6 bg-gray-200 rounded"></div>
-                </div>
-                <p className="text-xs text-gray-400 mt-2">
-                  Kreditkarte, Debitkarte, Apple Pay, Google Pay
-                </p>
-              </div>
+              <p className="text-gray-600 mb-6">
+                Gib deine E-Mail-Adresse ein und erhalte sofort Zugang zum kompletten Starter Kit.
+                Die Download-Links werden dir auch per E-Mail zugeschickt.
+              </p>
 
-              {/* Buy Button */}
-              <Button
-                onClick={handleCheckout}
-                variant="primary"
-                size="lg"
-                fullWidth
-                disabled={isLoading}
-                className="text-xl py-5"
-              >
-                {isLoading ? (
-                  "Wird geladen..."
-                ) : (
-                  <>Jetzt für {basePrice} € kaufen</>
-                )}
-              </Button>
+              {/* Email Form */}
+              <form onSubmit={handleDownload}>
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Deine E-Mail-Adresse
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="max@beispiel.de"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors text-gray-900"
+                    required
+                  />
+                  {error && (
+                    <p className="text-red-500 text-sm mt-2">{error}</p>
+                  )}
+                </div>
+
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                  disabled={isLoading}
+                  className="text-xl py-5"
+                >
+                  {isLoading ? (
+                    "Wird geladen..."
+                  ) : (
+                    <>
+                      <Download className="w-5 h-5 mr-2" />
+                      Jetzt kostenlos herunterladen
+                    </>
+                  )}
+                </Button>
+              </form>
 
               {/* Legal */}
               <p className="text-xs text-gray-500 text-center mt-4">
-                Mit dem Kauf akzeptierst du unsere{" "}
-                <Link href="/agb" className="underline hover:text-gray-700">
-                  AGB
-                </Link>{" "}
-                und{" "}
-                <Link
-                  href="/datenschutz"
-                  className="underline hover:text-gray-700"
-                >
+                Mit dem Download akzeptierst du unsere{" "}
+                <Link href="/datenschutz" className="underline hover:text-gray-700">
                   Datenschutzerklärung
                 </Link>
-                .
+                . Wir senden dir die Download-Links per E-Mail.
+                Kein Spam, kein Abo.
               </p>
 
-              {/* Guarantee */}
+              {/* Free Badge */}
               <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                 <div className="flex items-center gap-2 text-green-700">
                   <Shield className="w-5 h-5" />
                   <span className="font-medium">
-                    14-Tage Geld-zurück-Garantie
+                    100% kostenlos – kein Haken
                   </span>
                 </div>
                 <p className="text-sm text-green-600 mt-1">
-                  Nicht zufrieden? Du bekommst dein Geld zurück – ohne Fragen.
+                  Kein Abo, keine versteckten Kosten. Einfach herunterladen und loslegen.
                 </p>
               </div>
             </Card>

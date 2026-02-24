@@ -274,7 +274,7 @@ export function AnimatedHero() {
                 className="group relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  {hero.cta} – {hero.price}
+                  {hero.cta}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <motion.div

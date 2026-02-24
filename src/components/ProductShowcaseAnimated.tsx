@@ -109,7 +109,7 @@ const bonusItem = {
   id: "bonus",
   icon: Gift,
   title: "BONUS: Premium Vorlagen",
-  subtitle: "Bei Bestellung heute",
+  subtitle: "Beim Download heute",
   color: "from-rose-500 to-pink-500",
   value: "39 €",
   details: [
@@ -346,11 +346,11 @@ export function ProductShowcaseAnimated() {
                   animate={{ x: [0, 10, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  <ArrowRight className="w-8 h-8 text-orange-500 hidden md:block" />
+                  <ArrowRight className="w-8 h-8 text-green-500 hidden md:block" />
                 </motion.div>
                 <div className="bg-green-500/20 border border-green-500/50 rounded-xl px-6 py-3 mt-2">
                   <p className="text-green-400 font-heading">
-                    Du sparst <span className="text-2xl font-bold">{totalValue - 47} €</span>
+                    Du sparst <span className="text-2xl font-bold">{totalValue} €</span>
                   </p>
                 </div>
               </div>
@@ -360,10 +360,10 @@ export function ProductShowcaseAnimated() {
                 <p className="text-concrete-400 text-sm uppercase tracking-wider mb-2">
                   Dein Preis heute
                 </p>
-                <div className="font-display text-5xl md:text-6xl text-orange-500">
-                  47 €
+                <div className="font-display text-4xl md:text-5xl text-green-400">
+                  Kostenlos
                 </div>
-                <p className="text-concrete-500 text-sm mt-2">Einmalig, kein Abo</p>
+                <p className="text-concrete-500 text-sm mt-2">Kein Abo, keine Kosten</p>
               </div>
             </div>
 
@@ -375,7 +375,7 @@ export function ProductShowcaseAnimated() {
               whileTap={{ scale: 0.98 }}
             >
               <Zap className="w-6 h-6" />
-              Jetzt Starter Kit sichern
+              Jetzt kostenlos herunterladen
               <ArrowRight className="w-6 h-6" />
             </motion.a>
           </div>

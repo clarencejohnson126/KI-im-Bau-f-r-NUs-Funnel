@@ -112,9 +112,9 @@ export function ProductReveal() {
               <div className="relative z-10">
                 {/* Badge */}
                 <div className="flex justify-center mb-6">
-                  <span className="inline-flex items-center gap-2 px-4 py-1 bg-orange-500/20 border border-orange-500/30 rounded-full text-orange-300 text-sm font-semibold">
+                  <span className="inline-flex items-center gap-2 px-4 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-300 text-sm font-semibold">
                     <Sparkles className="w-4 h-4" />
-                    Limitiertes Angebot
+                    Jetzt kostenlos
                   </span>
                 </div>
 
@@ -128,7 +128,7 @@ export function ProductReveal() {
                       {product.pricing.discount}
                     </span>
                   </div>
-                  <div className="font-display text-7xl md:text-8xl text-white leading-none">
+                  <div className="font-display text-6xl md:text-7xl text-green-400 leading-none">
                     {product.pricing.current}
                   </div>
                   <p className="text-green-400 font-semibold mt-2">
@@ -158,13 +158,13 @@ export function ProductReveal() {
                   fullWidth
                   className="group text-xl py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
                 >
-                  Jetzt für {product.pricing.current} sichern
+                  Jetzt kostenlos herunterladen
                   <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
                 {/* Micro Copy */}
                 <p className="text-center text-concrete-400 text-sm mt-4">
-                  Einmalzahlung • Sofort-Download • Kein Abo
+                  Kostenlos • Sofort-Download • Kein Abo
                 </p>
               </div>
             </div>

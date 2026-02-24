@@ -43,16 +43,16 @@ const faqs = [
     ],
   },
   {
-    category: "Kaufen & Lieferung",
+    category: "Download & Zugang",
     color: "from-green-500 to-emerald-500",
     questions: [
       {
         q: "Wie erhalte ich das Produkt?",
-        a: "Sofort nach dem Kauf erhältst du eine E-Mail mit Download-Links. Du lädst das E-Book als PDF herunter, plus alle Bonus-Materialien (Prompts, Checklisten, Vorlagen). Alles digital, sofort verfügbar, kein Warten.",
+        a: "Sofort nach der Anmeldung mit deiner E-Mail erhältst du Zugang zu den Download-Links. Du lädst das E-Book als PDF herunter, plus alle Bonus-Materialien (Prompts, Checklisten, Vorlagen). Alles digital, sofort verfügbar, kein Warten.",
       },
       {
-        q: "Gibt es eine Geld-zurück-Garantie?",
-        a: "Ja, 14 Tage. Wenn das Starter Kit nicht hält, was es verspricht – volle Erstattung, keine Fragen. Ich bin überzeugt, dass es funktioniert. Und wenn nicht, will ich dein Geld nicht.",
+        q: "Was ist der Haken? Warum kostenlos?",
+        a: "Kein Haken. Ich möchte, dass möglichst viele Nachunternehmer von KI profitieren. Das Starter Kit ist meine Visitenkarte. Kein Abo, keine versteckten Kosten.",
       },
       {
         q: "Sind Updates inklusive?",

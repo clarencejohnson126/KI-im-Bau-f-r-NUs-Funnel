@@ -65,7 +65,7 @@ export async function sendProductDeliveryEmail({
           <tr>
             <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); border-radius: 12px 12px 0 0;">
               <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">
-                Vielen Dank für deinen Kauf!
+                Dein Starter Kit ist bereit!
               </h1>
             </td>
           </tr>
@@ -78,7 +78,7 @@ export async function sendProductDeliveryEmail({
               </p>
 
               <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
-                dein Kauf war erfolgreich! Hier ist dein Download-Link für das <strong>KI im Bau Starter Kit</strong>:
+                hier ist dein kostenloser Download-Link für das <strong>KI im Bau Starter Kit</strong>:
               </p>
 
               <!-- Download Buttons -->
@@ -149,9 +149,9 @@ export async function sendProductDeliveryEmail({
   const textContent = `
 ${greeting},
 
-Vielen Dank für deinen Kauf!
+Dein Starter Kit ist bereit!
 
-Deine Download-Links für das KI im Bau Starter Kit:
+Hier sind deine kostenlosen Download-Links für das KI im Bau Starter Kit:
 
 Starter Kit (PDF, Prompts, Checklisten):
 ${downloadUrl}
@@ -175,7 +175,7 @@ Gründer, Rebelz AI
   const { data, error } = await getResend().emails.send({
     from: FROM_EMAIL,
     to,
-    subject: "Dein KI im Bau Starter Kit ist bereit zum Download",
+    subject: "Dein kostenloses KI im Bau Starter Kit – Download-Links",
     html: htmlContent,
     text: textContent,
   });

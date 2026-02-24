@@ -67,7 +67,7 @@ export function MidPageCTA({ variant = "default" }: MidPageCTAProps) {
             <span className={`text-lg ${colors.subheadline} line-through`}>
               {product.pricing.original}
             </span>
-            <span className={`font-display text-4xl md:text-5xl ${variant === "gradient" ? "text-white" : "text-orange-500"}`}>
+            <span className={`font-display text-4xl md:text-5xl ${variant === "gradient" ? "text-white" : "text-green-600"}`}>
               {product.pricing.current}
             </span>
             <span className={`px-2 py-1 rounded text-sm font-bold ${
@@ -95,7 +95,7 @@ export function MidPageCTA({ variant = "default" }: MidPageCTAProps) {
         <div className={`flex flex-wrap justify-center gap-4 md:gap-6 ${colors.reminder}`}>
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4" />
-            <span className="text-sm">14-Tage Garantie</span>
+            <span className="text-sm">100% kostenlos</span>
           </div>
           <div className="flex items-center gap-2">
             <Download className="w-4 h-4" />

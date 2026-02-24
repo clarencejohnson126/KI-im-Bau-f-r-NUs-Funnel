@@ -161,8 +161,8 @@ export function Hero() {
                     E-Book • Prompts • Checklisten • Matrix
                   </p>
                   <div className="mt-4 flex items-center justify-center gap-2">
-                    <span className="text-sm text-concrete-400 line-through">200 €</span>
-                    <span className="font-display text-3xl text-orange-500">47 €</span>
+                    <span className="text-sm text-concrete-400 line-through">264 €</span>
+                    <span className="font-display text-3xl text-green-500">Kostenlos</span>
                   </div>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export function Hero() {
 
             {/* Floating Elements */}
             <div className="absolute -top-6 -left-6 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-subtle">
-              -76%
+              GRATIS
             </div>
             <div className="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-full shadow-lg text-sm font-medium text-concrete-700 border border-concrete-100">
               📖 300+ Seiten

@@ -249,12 +249,12 @@ export function StatsShowcase() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <div className="bg-concrete-800 rounded-xl px-6 py-3">
                 <p className="text-concrete-400 text-sm">Deine Investition</p>
-                <p className="text-white font-display text-2xl">47 €</p>
+                <p className="text-green-400 font-display text-2xl">0 €</p>
               </div>
               <div className="text-3xl">→</div>
               <div className="bg-green-500/20 border border-green-500/50 rounded-xl px-6 py-3">
-                <p className="text-green-400 text-sm">ROI im ersten Monat</p>
-                <p className="text-green-400 font-display text-2xl">121x</p>
+                <p className="text-green-400 text-sm">Wert im ersten Monat</p>
+                <p className="text-green-400 font-display text-2xl">5.720 €</p>
               </div>
             </div>
           </div>

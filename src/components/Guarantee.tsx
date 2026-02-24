@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, Check, RefreshCcw, Mail } from "lucide-react";
+import { ShieldCheck, Check, Download, Mail } from "lucide-react";
 import { copy } from "../../content/copy";
 import { ScrollReveal } from "./ui/ScrollReveal";
 
@@ -55,24 +55,24 @@ export function Guarantee() {
                 <div className="grid sm:grid-cols-3 gap-4 mb-8">
                   <div className="bg-concrete-800/50 border border-concrete-700 rounded-xl p-4">
                     <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <RefreshCcw className="w-5 h-5 text-green-400" />
+                      <Check className="w-5 h-5 text-green-400" />
                     </div>
-                    <p className="text-white font-medium">14 Tage</p>
-                    <p className="text-concrete-500 text-sm">Rückgaberecht</p>
+                    <p className="text-white font-medium">0 €</p>
+                    <p className="text-concrete-500 text-sm">Komplett kostenlos</p>
                   </div>
                   <div className="bg-concrete-800/50 border border-concrete-700 rounded-xl p-4">
                     <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Check className="w-5 h-5 text-green-400" />
+                      <Download className="w-5 h-5 text-green-400" />
                     </div>
-                    <p className="text-white font-medium">100%</p>
-                    <p className="text-concrete-500 text-sm">Geld-zurück</p>
+                    <p className="text-white font-medium">Sofort</p>
+                    <p className="text-concrete-500 text-sm">Download bereit</p>
                   </div>
                   <div className="bg-concrete-800/50 border border-concrete-700 rounded-xl p-4">
                     <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Mail className="w-5 h-5 text-green-400" />
                     </div>
-                    <p className="text-white font-medium">Schnell</p>
-                    <p className="text-concrete-500 text-sm">Abwicklung</p>
+                    <p className="text-white font-medium">Kein Spam</p>
+                    <p className="text-concrete-500 text-sm">Nur Download-Links</p>
                   </div>
                 </div>
 
