@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendProductDeliveryEmail } from "@/lib/resend";
+import {
+  sendProductDeliveryEmail,
+  addContactToAudience,
+  sendNewLeadNotification,
+} from "@/lib/resend";
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,18 +23,25 @@ export async function POST(request: NextRequest) {
     const flipbookUrl =
       "https://drive.google.com/file/d/1Uag-CD5k-SFLFBfFmgLfHj-F_sjJ3BYO/view?usp=sharing";
 
-    // Send product delivery email
-    try {
-      await sendProductDeliveryEmail({
-        to: email,
-        downloadUrl,
-        flipbookUrl,
-      });
-      console.log("Download email sent to:", email);
-    } catch (emailError) {
-      console.error("Failed to send download email:", emailError);
-      // Still allow download even if email fails
-    }
+    // Run all three tasks in parallel – none should block the others
+    const results = await Promise.allSettled([
+      // 1. Send download links to the user
+      sendProductDeliveryEmail({ to: email, downloadUrl, flipbookUrl }),
+      // 2. Save email to Resend Audience
+      addContactToAudience(email),
+      // 3. Notify owner about new lead
+      sendNewLeadNotification(email),
+    ]);
+
+    // Log any failures (but don't block the user)
+    results.forEach((result, index) => {
+      const labels = ["delivery email", "audience contact", "lead notification"];
+      if (result.status === "rejected") {
+        console.error(`Failed: ${labels[index]}:`, result.reason);
+      }
+    });
+
+    console.log("Download processed for:", email);
 
     // Set access cookie so /danke page is accessible
     const response = NextResponse.json({ success: true });
