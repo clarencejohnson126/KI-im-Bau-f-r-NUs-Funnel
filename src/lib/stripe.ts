@@ -11,7 +11,7 @@ export const PRODUCTS = {
   starterKit: {
     name: "KI im Bau Starter Kit",
     priceId: process.env.STRIPE_PRICE_STARTER_KIT,
-    price: 4700, // in cents
+    price: 995, // in cents
   },
   bumpOffer: {
     name: "Premium Vorlagen-Paket",

@@ -123,7 +123,7 @@ export function DecisionSection() {
 
               <div className="mt-8 pt-6 border-t border-green-500/20">
                 <p className="text-green-400 text-sm font-medium">
-                  Investition: Kostenlos → ROI ab dem ersten erkannten Nachtrag
+                  Investition: Einmalig 9,95 € → ROI nach einem erkannten Nachtrag
                 </p>
               </div>
             </div>
@@ -135,12 +135,12 @@ export function DecisionSection() {
           <a href="/checkout">
             <Button variant="primary" size="lg" className="group">
               <Zap className="w-5 h-5 mr-2" />
-              Ich wähle Option 2 – Jetzt kostenlos herunterladen
+              Ich wähle Option 2 – Jetzt für {product.pricing.current} sichern
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
           <p className="mt-4 text-concrete-500 text-sm">
-            100% kostenlos • Kein Risiko
+            14-Tage Geld-zurück-Garantie • Kein Risiko
           </p>
         </div>
       </div>

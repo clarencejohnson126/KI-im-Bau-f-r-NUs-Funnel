@@ -14,7 +14,6 @@ export function getResend(): Resend {
 }
 
 export const FROM_EMAIL = "KI im Bau <noreply@thinkbig.rebelz-ai.com>";
-export const NOTIFY_EMAIL = "thinkbig@rebelz-ai.com";
 
 interface SendProductEmailParams {
   to: string;
@@ -66,7 +65,7 @@ export async function sendProductDeliveryEmail({
           <tr>
             <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); border-radius: 12px 12px 0 0;">
               <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">
-                Dein Starter Kit ist bereit!
+                Vielen Dank für deinen Kauf!
               </h1>
             </td>
           </tr>
@@ -79,7 +78,7 @@ export async function sendProductDeliveryEmail({
               </p>
 
               <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
-                hier ist dein kostenloser Download-Link für das <strong>KI im Bau Starter Kit</strong>:
+                dein Kauf war erfolgreich! Hier ist dein Download-Link für das <strong>KI im Bau Starter Kit</strong>:
               </p>
 
               <!-- Download Buttons -->
@@ -150,9 +149,9 @@ export async function sendProductDeliveryEmail({
   const textContent = `
 ${greeting},
 
-Dein Starter Kit ist bereit!
+Vielen Dank für deinen Kauf!
 
-Hier sind deine kostenlosen Download-Links für das KI im Bau Starter Kit:
+Deine Download-Links für das KI im Bau Starter Kit:
 
 Starter Kit (PDF, Prompts, Checklisten):
 ${downloadUrl}
@@ -176,73 +175,13 @@ Gründer, Rebelz AI
   const { data, error } = await getResend().emails.send({
     from: FROM_EMAIL,
     to,
-    subject: "Dein kostenloses KI im Bau Starter Kit – Download-Links",
+    subject: "Dein KI im Bau Starter Kit ist bereit zum Download",
     html: htmlContent,
     text: textContent,
   });
 
   if (error) {
     console.error("Failed to send email:", error);
-    throw error;
-  }
-
-  return data;
-}
-
-/**
- * Add email to Resend Audience (contact list).
- * Requires RESEND_AUDIENCE_ID env variable.
- */
-export async function addContactToAudience(email: string) {
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
-  if (!audienceId) {
-    console.warn("RESEND_AUDIENCE_ID not set – skipping contact save");
-    return null;
-  }
-
-  const resend = getResend();
-  const { data, error } = await resend.contacts.create({
-    email,
-    audienceId,
-    unsubscribed: false,
-  });
-
-  if (error) {
-    console.error("Failed to add contact to audience:", error);
-    throw error;
-  }
-
-  console.log("Contact added to audience:", email);
-  return data;
-}
-
-/**
- * Send notification email to owner when someone downloads the kit.
- */
-export async function sendNewLeadNotification(leadEmail: string) {
-  const now = new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" });
-
-  const { data, error } = await getResend().emails.send({
-    from: FROM_EMAIL,
-    to: NOTIFY_EMAIL,
-    subject: `Neuer Download: ${leadEmail}`,
-    html: `
-      <div style="font-family: sans-serif; padding: 20px;">
-        <h2 style="color: #f97316;">Neuer Starter Kit Download!</h2>
-        <p><strong>E-Mail:</strong> ${leadEmail}</p>
-        <p><strong>Zeitpunkt:</strong> ${now}</p>
-        <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;" />
-        <p style="color: #6b7280; font-size: 14px;">
-          Diese Person hat das kostenlose KI im Bau Starter Kit heruntergeladen.
-          Die Download-Links wurden automatisch per E-Mail zugestellt.
-        </p>
-      </div>
-    `,
-    text: `Neuer Starter Kit Download!\n\nE-Mail: ${leadEmail}\nZeitpunkt: ${now}\n\nDie Download-Links wurden automatisch zugestellt.`,
-  });
-
-  if (error) {
-    console.error("Failed to send lead notification:", error);
     throw error;
   }
 

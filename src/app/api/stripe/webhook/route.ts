@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { sendProductDeliveryEmail } from "@/lib/resend";
+import { DOWNLOAD_LINKS } from "@/lib/downloads";
 import Stripe from "stripe";
 
 export async function POST(request: NextRequest) {
@@ -54,9 +55,7 @@ export async function POST(request: NextRequest) {
 
       // Send product delivery email
       if (customerEmail) {
-        // Google Drive download links
-        const downloadUrl = "https://drive.google.com/file/d/1ZTQJhqwzIkv35OKY52c4PxloQ41dluD4/view?usp=drive_link";
-        const flipbookUrl = "https://drive.google.com/file/d/1Uag-CD5k-SFLFBfFmgLfHj-F_sjJ3BYO/view?usp=sharing";
+        const { downloadUrl, flipbookUrl } = DOWNLOAD_LINKS;
 
         try {
           await sendProductDeliveryEmail({

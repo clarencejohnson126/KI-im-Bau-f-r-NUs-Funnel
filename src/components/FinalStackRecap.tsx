@@ -82,15 +82,15 @@ export function FinalStackRecap() {
 
             <a href="/checkout">
               <Button variant="primary" size="lg" className="group w-full md:w-auto">
-                Jetzt kostenlos herunterladen
+                Jetzt für {product.pricing.current} sichern
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
 
-            {/* Free Reminder */}
+            {/* Guarantee Reminder */}
             <div className="flex items-center justify-center gap-2 mt-4 text-concrete-400">
               <ShieldCheck className="w-4 h-4" />
-              <span className="text-sm">100% kostenlos – kein Haken</span>
+              <span className="text-sm">14-Tage Geld-zurück-Garantie</span>
             </div>
           </div>
         </div>
